@@ -1,0 +1,71 @@
+<div class="row mainPart">
+   <div class=" col-6 col-sm-6 left_part mainPart text-center">
+       <div class="loginParLeft">
+          <div class="vector-image">
+           <img style="width: 56%;" src="../../../../assets/images/medi-sheba/login/Vector Illustration.png" alt="">
+          </div>
+          <div class=" title_text">
+             <p> Have all access to your shared patient's</p>
+             <p>documents & easily collaborate with</p>
+             <p> your fellow doctors.</p>
+          </div>
+          <div class="copy_right">
+          &copy; 2020 All copyrights Bengal Mobile QA.<sup>TM</sup>
+          </div> 
+      </div>
+   </div>
+    <div class="col-6 col-sm-6 right_part mainPart">
+       <div class="" style="display: flex; width: 100%;justify-content: center;">
+           <div class="loginParRight">
+               <div style="margin-left: 117px;">
+                   <div class="logo-image">
+                       <img style="height:78px" class="img-responsive" src="../../../../assets/images/medi-sheba/login/MediShebaLogo.png" alt="">
+                   </div>
+                   <div class="project_name">
+                     MediSheba
+                   </div>
+                   <div class="text_heading">
+                     Your Online Health Solution
+                  </div>
+               </div>
+               <div class="login_text">
+                 Login to your Account
+              </div>
+              <div class="login_form">
+                <input type="text" class="input_text" placeholder="E-mail" [(ngModel)]="model.user_name" (keyup)="enterkeyPress($event)" required><br><br>
+                <input type="password" class="input_text" placeholder="Password" [(ngModel)]="model.password" (keyup)="enterkeyPress($event)" required>
+             </div>   
+             <div class="row check" style="margin-top: 10px; margin-bottom: 15px;">
+                <div class="col-sm-7">
+                   <mat-checkbox id="rememberCheckbox" style="color: white; font-size: smaller; padding: 2px;"
+                       [checked]="isRememberChecked" (change)="onChange($event)" (keyup)="enterkeyPress($event)">
+                     <span class="rememberme_text">Remember</span>
+                   </mat-checkbox>
+                </div>
+                <div class="col-sm-5">
+                  <span class="forget_text">Forget Password?</span> 
+                </div>
+             </div>
+             <div class="loginButton">
+                <button type="submit" class="login_Btn" (click)="signIn()" [disabled]="!model.user_name || !model.password">
+                 LOGIN</button>
+             </div>
+        <!-- <div>OR</div> -->
+
+             <div class="signin_with" style="margin-top: 10px;">
+                <span>
+                   <img class="signinImg" src="../../../../assets/images/medi-sheba/login/Facebook Btn.png" alt="">
+                </span>&nbsp;
+                <span>
+                 <img class="signinImg" src="../../../../assets/images/medi-sheba/login/Google Plus Btn.png" alt="">
+                </span>
+             </div>
+
+             <div style="margin-top: 15px;">
+                <span class="account" style=" color: #95989a;">Don't have an account?</span>
+                <span class="account" style="color: #f49c22;">Create Account</span>
+             </div>
+          </div>
+      </div>
+   </div>
+</div>

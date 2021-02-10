@@ -1,0 +1,248 @@
+.left_part{
+    background-color: #f7f7f8;
+}
+
+.right_part{
+    background-image:url(../../../../assets/images/medi-sheba/login/Background-Image.png); 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.logo-image{
+    margin-left:60px;
+}
+.title_text{
+    /* height: 114px; */
+    margin-top: 10px;
+    font-family: Poppins;
+    font-size: 22px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #19769f;
+}
+
+.copy_right{
+    font-family: Poppins;
+  font-size: 20px;
+  /* margin-left: 4%; */
+  margin-top: 4%;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: #515c6f;
+}
+
+.project_name{
+    width: 179px;
+    margin-left:33px;
+    margin-top: 3px;
+    font-family: Comfortaa;
+    font-size: 29px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+}
+
+.text_heading{
+    width: 273px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    font-family: Comfortaa;
+    font-size: 18px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    color: #707070;
+}
+.login_text{
+    width: 338px;
+    height: 44px;
+    margin-bottom: 10px;
+    font-family: Poppins;
+    font-size: 26px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.52;
+    letter-spacing: normal;
+    color: #19769f;
+}
+
+.input_text{
+  width: 473px;
+  height: 50px;
+  padding-left: 26px;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  border: solid 1px #d5d5d5;
+  background-color: #ffffff;
+  
+}
+input:focus{
+    outline:none;
+   border: 1px solid #87928A
+}
+
+.rememberme_text{
+     height: 25px;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #95989a;
+}
+.forget_text{
+    height: 25px;
+    margin-left: 16%;
+    font-family: Poppins;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #95989a;
+}
+
+.account{
+    height: 28px;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    text-align: left;
+}
+
+.login_Btn{
+    background-image: linear-gradient(to right, #F5CF1F , #F49E22);
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    width: 473px;
+    height: 50px;
+    border-radius: 5px;
+    outline: none;
+}
+p {margin: 0;}
+::ng-deep .check .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background { background-color: orange; }
+
+@media (min-width:1400px) and (max-width: 1450px) {
+    .loginParLeft{
+        margin-top: 10%;
+     }
+     .copy_right{
+         margin-top: 7%;
+     }
+.loginParRight{
+  
+    padding-top: 4%;
+}
+
+}
+
+@media (min-width:1200px) and (max-width: 1399px) {
+    .loginParLeft{
+        margin-top: 4%;
+     }
+     .copy_right{
+         margin-top: 7%;
+     }
+    .loginParRight{
+      padding-top: 3%;
+    
+    }
+}
+
+    @media (min-width:1000px) and (max-width: 1199px) {
+        .loginParLeft{
+            margin-top: 12%;
+         }
+         .copy_right{
+             margin-top: 13%;
+         }
+        .loginParRight{
+          margin-top: 2%;
+    
+        }
+        
+        }
+
+        /* @media (min-width:1451px) and (max-width: 1800px) {
+
+            .loginParRight{
+            
+             
+            }
+            
+            }
+
+            @media (min-width:1801px) and (max-width: 2200px) {
+
+                .loginParRight{
+                 
+                 
+                }
+                
+                } */
+
+        @media (min-width:1550px) and (max-width: 2600px) {
+
+                 .loginParLeft{
+                  padding-top: 15%;
+               }
+                    .loginParRight{
+                    
+                     padding-top: 15%;
+                    }
+                    
+                    }
+                    @media (min-width:768px) and (max-width:950px) {
+
+                        .loginParLeft{
+                         padding-top: 10%;
+                      }
+                      .copy_right{
+                          margin-top: 20%;
+                          font-size: 16px;
+                      }
+                           /* .loginParRight{
+                           
+                            padding-top: 15%;
+                           } */
+                           .title_text{
+                               font-size: 17px;
+                           }
+                           
+                           .input_text{
+                               width: 300px;
+                           }
+                           .login_text{
+                               font-size: 18px;
+                           }
+                           .login_Btn{
+                               width: 300px;
+                           }
+
+                           .signinImg{
+                               width:150px
+                           }
+                           }
+        

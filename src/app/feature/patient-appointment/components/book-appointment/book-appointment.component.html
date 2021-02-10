@@ -1,0 +1,12 @@
+<div class="continer-fluid">
+  <div class="Book-Appointment-Schedule">
+    Book Appointment Schedule
+  </div>
+  <div style="box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.09);">
+    <mat-calendar [selected]="selectedDate" [dateClass]="dateClass()" (selectedChange)="datePickerEvent($event)"></mat-calendar>
+  </div>
+  <div style="padding-top: 10%;">
+    <img src="../../../../../assets/images/medi-sheba/Book Now Btn/Book Now Btn@3x.png" class="Book-Now-Btn"
+      (click)="createAppointment()">
+  </div>
+</div>

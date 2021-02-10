@@ -1,0 +1,18 @@
+.menuList a {
+    font-size: 14px;
+    background-color: #ffffff !important;
+    height: 55px;
+    border-left: 4px solid #f4af21;
+    margin-bottom: 5px;
+}
+
+.activeAdminMenu {
+    background-color: #ffffff !important;
+    color: #f49a22 !important;
+    font-weight: 600;
+}
+
+.menuIcon {
+    width: 20px;
+    margin-right: 10%
+}

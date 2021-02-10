@@ -1,0 +1,71 @@
+
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+html,
+
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+body {
+  overflow: hidden;
+}
+
+.mat-list-item{
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.mat-sidenav {
+  top: 64px !important
+}
+
+.book-appointment-modal mat-dialog-container {
+  /* padding: 3px; */
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.incoming-call-dialog-container mat-dialog-container {
+  padding: 0px;
+  overflow: hidden;
+}
+
+.leftwatermark {
+  display: none;
+}
+
+@media (max-width: 768px){
+    body {
+        overflow: auto;
+      }
+  }
+
+.wantsToClickAndActive{
+  cursor: pointer;
+}
+
+.active-row-dispathcer, .wantsToClickAndActive:hover{
+  background: #407583;
+  height: 15px;
+}
+
+.cdk-global-scrollblock {
+  overflow-y:hidden;
+}
+
+.l2gTheamButtonColor{
+  background-image: linear-gradient(to bottom, #F5CD1F , #F49D23) !important;
+}
+
+.doctor-schedule {
+  background-color: #60c5bf;
+  width: 90%;
+  height: 90%;
+  border-radius: 999px;
+}

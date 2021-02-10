@@ -1,0 +1,10 @@
+<span *ngIf="setupView === false">
+    <app-general (setupViewEvtEmitter)="modeChanger($event)"></app-general>
+    <!-- general for doctor and patient -->
+</span>
+
+<span *ngIf="setupView === true">
+    <app-setup (generalViewEEmitter)="modeChanger($event)"></app-setup> 
+    <!-- setup for admin-->
+</span>
+

@@ -1,0 +1,29 @@
+.Book-Appointment-Schedule {
+  /* width: 321px;
+  height: 31px;
+  font-family: Poppins; */
+  font-size: 19px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 0.95;
+  letter-spacing: normal;
+  text-align: center;
+  color: #60c5bf;
+}
+
+.Rectangle-585 {
+  width: 461px;
+  height: 73px;
+  border-radius: 6px;
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.09);
+  background-color: #60c5bf;
+}
+
+.Book-Now-Btn {
+  width: 100%;
+  cursor: pointer;
+  /* width: 403.7px;
+  height: 54.8px;
+  object-fit: contain; */
+}

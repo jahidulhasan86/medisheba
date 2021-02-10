@@ -1,0 +1,67 @@
+<div class="continer-fluid" style="overflow: hidden;">
+  <div class="row" style="padding-top: 2%;">
+    <div class="col-sm-12 col-md-12" style="padding-bottom: 0%;">
+      <div class="col-sm-12 col-md-12" style="padding-bottom: 2%;">
+        <div class="col-sm-12 col-md-12 heading-top">
+          All Departments
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-12" style="text-align: center; font-size: 18px;" *ngIf="departments.length == 0">
+        <span>No department found</span>
+      </div>
+      <div class="col-sm-12 col-md-12">
+        <div class="col-sm-3 col-md-3" style="margin-bottom: 10px;"
+          *ngFor="let department of departments | paginate: config">
+          <div class="card" style="border-radius: 18px 8px 8px 18px;" (mouseover)="mouseover($event, department)"
+            (mouseout)="mouseOut($event, department)">
+            <mat-card class="example-card dept-left-side-border">
+              <mat-card-content>
+                <div style="text-align: right;">
+                  <img class="department-img"
+                    src="../../../../../assets/images/medi-sheba/DepartmentsIcon/Departments Icon@3x.png">
+                </div>
+                <div>
+                  <p class="department-name content-overflow" id="department-name_{{department.id}}"
+                    title="{{department.name}}">{{department.name | uppercase }}</p>
+                  <p class="static-dept" id="static-dept_{{department.id}}">Department</p>
+                  <!-- <p class="subject-name content-overflow" title="{{subject.subject_name}}">{{subject.subject_name}}</p> -->
+                  <p class="instructor-name content-overflow">
+                    <span style="position: absolute;
+                    right: 3%; bottom: 12%;">
+                      <button class="department-detatils-btn" id="department-detatils-btn_{{department.id}}"
+                        (click)="getDoctorsByBranchAndDept(department)">Show
+                        Details</button>
+                    </span>
+                  </p>
+                </div>
+                <div>
+                </div>
+                <div>
+                </div>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12" style="padding-top: 2%;" *ngIf="departments.length > 4">
+        <div class="col-sm-5"></div>
+        <div class="col-sm-3">
+          <pagination-template #p="paginationApi" [id]="config.id" (pageChange)="config.currentPage = $event">
+            <div class="custom-pagination">
+              <div *ngFor="let page of p.pages" [class.current]="p.getCurrent() === page.value"
+                style="float: left; margin-right: 3%;">
+                <a (click)="p.setCurrent(page.value)" *ngIf="p.getCurrent() !== page.value">
+                  <span style="cursor: pointer;" class="dot"></span>
+                </a>
+                <div *ngIf="p.getCurrent() === page.value">
+                  <span class="dot-checked"></span>
+                </div>
+              </div>
+            </div>
+          </pagination-template>
+        </div>
+        <div class="col-sm-4"></div>
+      </div>
+    </div>
+  </div>
+</div>

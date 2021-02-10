@@ -1,0 +1,112 @@
+.example-card {
+    /* cursor: pointer; */
+    padding-right: 3%;
+    padding-top: 5%;
+    padding-bottom: 1%
+}
+
+.example-card:hover{
+    background-color: #b9b9b9;
+}
+
+.card{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transition: .5s;
+}
+
+.dept-left-side-border{
+    border-radius: 18px 8px 8px 18px;
+    border-left: 6px solid #60c5bf;
+}
+
+.card:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+.heading-top{
+    font-size: 18px;
+    font-weight: 600;
+    color: #515c6f;
+}
+
+.department-name{
+    font-size: 14px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.56;
+    letter-spacing: normal;
+    margin: 0;
+    color: #60c5bf;
+}
+
+.static-dept{
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #515c6f;
+}
+
+.subject-name{
+    font-size: 13px;
+    font-weight: 500;
+    color: #655a5a;
+    margin: 0;
+}
+
+.instructor-name{
+    font-size: 12px;
+    font-weight: 500;
+    color: #F49D23;
+}
+
+.department-detatils-btn{
+    padding: 0 10px 0 10px;
+    border: none;
+    color: white;
+    height: 27px;
+    font-size: 11px;
+    font-weight: bold;
+    font-family: monospace;
+    border-radius: 14px;
+    background-image: linear-gradient(to bottom, #f5cf1f, #f49823);
+    outline:none;
+    cursor: pointer;
+}
+
+.department-img{
+    width: 41px;
+    height: 41px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #F49D23;
+}
+
+.dot:hover{
+    background-color: #f5ecec;
+}
+
+.dot-checked{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #F49D23; 
+    background-image: linear-gradient(to top,#f49d23,#f5cd1f);
+}
+
+.content-overflow{
+    white-space: nowrap;
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -1,0 +1,47 @@
+<!-- Add Content Here -->
+<div class="mapContainer" style="width:100%;min-height: 0px;">
+    <agm-map [latitude]="latitude" [longitude]="longitude" *ngIf="isMapActive">
+      <agm-marker [latitude]="latitude" [longitude]="longitude">
+      </agm-marker>
+    </agm-map>
+  </div>
+  <ul id="chatBoxUL" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <!-- <div class="topChatLine">
+            <span>January 18,2018</span>
+        </div> -->
+    <li *ngFor="let chat of chatlist" class="">
+      <div class="row {{chat.align}}side" style="margin-left: -13px;">
+        <div class="col-md-12 col-sm-12 userPicNameTime">
+          <div class="row" style="margin-left: -5%;">
+            <div class="col-md-1 col-sm-2">
+              <div class="avatar" style="">
+                <img class="img-circle chat-image" src="../../../assets/images/user.png">
+              </div>
+            </div>
+            <div class="col-md-11 col-sm-10" style="margin-left:-2.5%;">
+              <span class="chat-user-name">{{chat.from}}</span>
+              <span class="chat-time">{{chat.stamp}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 col-sm-12 userChatContent" style="margin-top: 1%">
+          <div class="row">
+            <div class="col-md-8 col-sm-8 chat-content">
+              <div>
+                <p class="chat-content" [innerHTML]="chat.msg"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <span id="scrollBottom"></span>
+  </ul>
+  <div style="display: flex; " class="write-msg" id="sendInput" *ngIf="isSendMessage">
+    <!-- <mat-card>Simple card</mat-card> -->
+    <textarea class="userinput" style="resize: none;" aria-multiline="true" [(ngModel)]="msg" [ngModelOptions]="{standalone: true}"
+      (keyup)="enter($event)" matInput matAutosize placeholder="Type a message"></textarea>
+    <button style="margin-left: 20px" mat-fab color="primary">
+      <mat-icon class="btnAction" title="Send">send</mat-icon>
+    </button>
+  </div>

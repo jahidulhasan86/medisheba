@@ -1,0 +1,86 @@
+.example-card {
+    /* cursor: pointer; */
+    padding-right: 3%;
+    padding-top: 5%;
+    padding-bottom: 1%
+}
+
+.content-overflow{
+    white-space: nowrap;
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.heading-top{
+    font-size: 18px;
+    font-weight: 600;
+    color: #515c6f;
+}
+
+.Profile-Picture-Circle {
+    width: 45.8px;
+    height: 45.8px;
+    border: solid 1px #f5c220;
+    border-radius: 25px;
+}
+
+.base{
+    background-color: #f5f6fb;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.base:hover{
+    border: 1px solid #c4c4e2;
+}
+
+.Doctors-Name-heading {
+    /* width: 102px;
+    height: 20px; */
+    /* font-family: Poppins; */
+    font-size: 10px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    color: #8f8e8e;
+    margin: 0;
+}
+
+.Doctors-Name {
+    /* width: 174px;
+    height: 25px;
+    font-family: Poppins; */
+    font-size: 12px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.6;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5e5b5b;
+    margin: 0;
+}
+
+.Doctors-work-area{
+    /* width: 214px;
+    height: 19px;
+    font-family: Poppins; */
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.62;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5e5b5b;
+    margin: 0;
+      
+}
+
+.Book-An-Appointment-Btn {
+    width: 100%;
+    cursor: pointer;
+}

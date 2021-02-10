@@ -1,0 +1,207 @@
+
+.fill-space {
+  /* This fills the remaining space, by using flexbox. 
+     Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+.putspace,.btnActionP{
+  padding-right: 15px;
+  cursor: pointer;
+}
+.btnAction{
+  cursor: pointer;
+}
+mat-sidenav, 
+mat-sidenav.md-locked-open, 
+mat-sidenav.md-closed.md-locked-open-add-active {
+    /* min-width: 200px !important;
+    width: 85vw !important;
+    max-width: 300px !important; */
+} 
+.putspacemore{
+  margin-right: 10%;
+  padding: 2px
+}
+.menuIcon:hover{
+  color: aliceblue
+}
+
+.activeIcon{
+  color: aliceblue;
+}
+.topaction{
+  border: 1px solid darkgrey;
+  margin-right: 2%;
+}
+
+.listItem:hover{
+  background-color: #2b9284d9 !important;
+  color: white;
+  padding-left: 20px;
+}
+.listItem{
+  padding-left: 20px;
+}
+.mat-expansion-panel-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 16px 0 0px;
+}
+.mat-expansion-panel-header:hover{
+  background-color: #2b9284d9 !important;
+  color: white
+}
+.mat-expansion-panel-body {
+  padding : 0px 10px 0px 0px !important;
+}
+.mat-menu-item {
+  height: 30px !important;
+  line-height: 0px
+}
+/* .usr_action:hover{
+  background-color: #2b9284d9 !important;
+  color: white
+} */
+.selected{
+  background-color: #2b9284d9 !important;
+  color: white
+}
+
+.putspacemore,.spaceleft{
+  cursor: pointer;
+}
+
+.userinput {
+  width: 95%;
+  margin-left: 1%;
+  height: 55px;
+  border-radius: 40px;
+  padding: 15px;
+  border-color: #f5f1ee;
+   background-color: #ffffff;
+  /* background-color: #ffffff;
+    border-color: #fff;
+    border-radius: 21px;
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px 12px;
+    margin: 5px 10px; */
+}
+
+ul li {
+  list-style: none;
+}
+.userinput:focus{
+  outline: none;
+}
+.write-msg{
+  /* position: fixed;
+  padding-bottom: 50px;
+ bottom: 0;
+ width: 70% */
+ position: fixed;
+ bottom: 30px;
+ width: 78%;
+ background-color: rgb(245, 241, 238);
+ padding: 5px;
+}
+.mat-fab.mat-primary{
+  background-color:#12ad98 
+}
+.mat-header-row {
+  position: sticky;
+  top: 0;
+  background: white;
+}
+
+.mat-tab-labels{
+  /* background-color: lightcyan !important */
+}
+
+.mat-tab-group{
+  margin-top: 1%;
+}
+
+.mat-tab-header{
+  border-top: 1px solid #12ad98
+}
+
+.mat-tab-label{
+  min-width: 56px !important
+}
+/* //////////////////R&D */
+.mat-sidenav {
+  /* top: 64px !important */
+}
+
+.mat-nav-list .mat-list-item {
+  cursor: pointer;
+  outline: 0;
+  padding-left: 0px;
+}
+
+.footer{
+  bottom: 0;
+  position: fixed;
+  z-index: 99999;
+  height: 30px;
+  text-align: center
+}
+
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 1px solid #607D8B;
+}
+
+agm-map{
+  height: 750px;
+  width: 976px;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff; 
+}
+
+#chatBoxUL{
+  /* max-height: 386px; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
+.removeDot {
+  list-style-type: none;
+}
+/* li.right{
+  float: right;
+} */
+
+.leftside{
+  float: left;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-color: whitesmoke;
+  width: 50%;
+  clear: both;
+  margin: 5px;
+}
+
+.rightside{
+  float: right;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-color: gainsboro;
+  width: 50%;
+  clear: both;
+  margin: 5px;
+}

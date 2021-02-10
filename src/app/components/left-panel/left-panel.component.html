@@ -1,0 +1,126 @@
+<span id="regularView" *ngIf="!isCallView">
+  <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:20%">
+    <div style="padding: 10px 10px 0px 10px;">
+      <div>
+        <div style="float: left;">
+          <img style="width: 30px; height: 29px;" src="../../../assets/images/lg/Login/medi-sheba-logo.png">
+        </div>
+        <div style="float: left; font-size: 20px; color: #f4a422; margin-left: 14%">
+          <p>Medi<b>Sheba</b></p>
+        </div>
+        <div [matMenuTriggerFor]="usermenu" style="float: right;">
+          <img style="width: 30px; cursor: pointer;" src="../../../assets/images/lg/new_res/leftpanel/three_dots.png">
+        </div>
+        <span flex>
+          <mat-menu #usermenu="matMenu">
+            <button mat-menu-item class="usr_action">Profile</button>
+            <button title="Go to Exam Activity Panel" mat-menu-item class="usr_action"
+              (click)="goToSetupView()">Setup</button>
+            <button mat-menu-item class="usr_action">Help</button>
+            <button mat-menu-item class="usr_action" (click)="signOut($event)">Logout</button>
+          </mat-menu>
+        </span>
+      </div>
+    </div>
+    <div style="clear: both; text-align: center; line-height: 0; color: #f4a422;">
+      <img style="height: 62px;
+      width: 66px;
+      border-radius: 50%;" *ngIf="aService.currentUser.profile_pic == null || aService.currentUser.profile_pic == '' "
+        src="../../../assets/images/lg/new_res/default_profile icon.png" />
+
+      <span style="font-size: 13px;
+      display: block;
+      font-weight: bold;
+      margin-top: 10px;">Welcome,
+        {{aService.currentUser.first_name}}&nbsp;{{aService.currentUser.last_name}}</span>
+      <span style="font-size: 12px;
+                border: 1px solid;
+                border-radius: 21px;
+                padding: 5px;
+                vertical-align: super;cursor: pointer;line-height: 4; font-weight: 600;"
+        class="userRoleName">{{aService.currentUser.role.role_name}}</span>
+    </div>
+
+    <div>
+      <mat-nav-list class="chat" *ngIf="recentShow"
+        style=" overflow: hidden !important;overflow-x: hidden !important; margin-top: 0;">
+        <app-recent></app-recent>
+      </mat-nav-list>
+
+      <mat-nav-list class="chat" *ngIf="doctorsShow"
+        style=" overflow: hidden !important;overflow-x: hidden !important; margin-top: 0;">
+        <app-doctors></app-doctors>
+      </mat-nav-list>
+
+      <mat-nav-list class="chat" *ngIf="appointmentsShow"
+        style=" overflow: hidden !important;overflow-x: hidden !important; margin-top: 0;">
+        <span *ngIf="accountService.currentUser.role.role_name == 'Patient'">
+          <app-appointments></app-appointments>
+        </span>
+        <span *ngIf="accountService.currentUser.role.role_name == 'Doctor'">
+          <app-doctor-appointments></app-doctor-appointments>
+        </span>
+      </mat-nav-list>
+    </div>
+
+    <div id='leftPanalTab' layout="row" class="topaction actionMenuBar componentDisable"
+      style="height: 55px;background: #F1F1F4;border-top: 2px solid #DADADC; display: flex;">
+
+      <div style="width: 20%; flex: 1; padding-top: 5px " id="callTab"
+        class="topMenuIcon bottomMenuIcon cursor menuBackgroundcolor" title="RECENT"
+        (click)="_clickToShowView($event,'recent','down')">
+        <span class="">
+          <img src="{{callImg}}" style="margin-top: 2px;" class="topMenuIconimg" /><br />
+          <span class="menuName" style="">RECENT</span>
+        </span>
+      </div>
+
+      <div style="width: 20%;text-align: center;  flex: 1;padding-top: 5px " id="friendTab"
+        class="topMenuIcon bottomMenuIcon cursor menuBackgroundcolor" title="DOCTORS"
+        (click)="_clickToShowView($event,'doctors','down');">
+        <span class="cursor" matBadge="{{notificationCount}}" matBadgeColor="warn" matBadgePosition="after">
+          <img src="{{friendImg}}" style="" class="topMenuIconimg" /><br />
+          <span class="menuName " style="">DOCTORS</span>
+        </span>
+      </div>
+
+      <div style="width: 20%;  flex: 1;padding-top: 5px" id="groupTab"
+        class="topMenuIcon bottomMenuIcon cursor tab-active-down" title="GROUPS"
+        (click)="_clickToShowView($event,'appointments','down')">
+        <span class="cursor" matBadge="{{notification_count_group}}" matBadgeColor="warn" matBadgePosition="after"
+          class="">
+          <img src="{{groupsImg}}" style="" class="topMenuIconimg" /><br />
+          <span class="menuName whiteColor" style="">APPOINTMENTS</span>
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div style="margin-left:20%">
+
+    <div class="w3-container" style="background-image: linear-gradient(to top, #F49D23, #F5CD1F);">
+      <div style="color: #F0F0F0;
+      padding: 20px 0px 20px 0px;
+      font-size: 16px;">
+        <i><img height="22" width="24" src="../../../assets/images/lg/new_res/header/home_icon.png"></i>
+        &nbsp;{{aService.currentUser.role.role_name}} Panel
+      </div>
+      <!-- <div><button (click)="getById('520f11ee-6220-49cd-ab1d-7a8121073c0e')">Start Call</button></div> -->
+    </div>
+
+    <div class="w3-container">
+      <ng-container *ngTemplateOutlet="template"></ng-container>
+    </div>
+
+  </div>
+</span>
+
+<span *ngIf="isCallView">
+  <ng-container *ngTemplateOutlet="template"></ng-container>
+</span>
+
+<ng-template #template>
+  <router-outlet (activate)="onActivate($event)"></router-outlet>
+</ng-template>

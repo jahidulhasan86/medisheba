@@ -1,0 +1,112 @@
+<div *ngIf="!onConnectXampp" class="se-pre-con"></div>
+<mat-toolbar class="header" layout="row" style="border-bottom: solid 1px aqua;color: white; padding: 0px;"
+  *ngIf="acServices.currentUser">
+
+  <div class="headerTopLeft" style="background: #F1F1F4; color: #f4a422;">
+    <div class="row headerTopLeft-part1" style="margin-top: 30px;padding:10px;margin-right: 0px;">
+      <div class="col-sm-2">
+        <img height="24" width="24" src="{{L2TogetherLogoUrl}}">
+      </div>
+      <div class="col-sm-8" style="font-weight: 300;text-align: center;">
+        Medi<b>Sheba</b>
+      </div>
+      <div class="col-sm-2 cursor" [matMenuTriggerFor]="usermenu">
+        <img height="24" width="24" src="../../../assets/images/lg/new_res/leftpanel/three_dots.png">
+      </div>
+      <span flex>
+        <mat-menu #usermenu="matMenu">
+          <button (click)="openProfile()" mat-menu-item class="usr_action">Profile</button>
+          <button
+            *ngIf="acServices.currentUser.role.role_name == 'Admin' || acServices.currentUser.role.role_name == 'Doctor' "
+            title="Go to Exam Activity Panel" mat-menu-item class="usr_action" (click)="goToSetupView()">Setup</button>
+          <button mat-menu-item class="usr_action">Help</button>
+          <!-- <button (click)="goToCallView($event)" mat-menu-item class="usr_action">Call</button> -->
+          <button (click)="logOut($event)" mat-menu-item class="usr_action">Logout</button>
+        </mat-menu>
+      </span>
+    </div>
+    <div class="row headerTopLeft-part2" style="text-align: center;line-height: 0;">
+      <img class="profileImg" *ngIf="acServices.currentUser.profile_pic == null || acServices.currentUser.profile_pic == '' " src="{{blankProfilePicUrl}}" />
+
+      <img class="profileImg" *ngIf="acServices.currentUser.profile_pic != null && acServices.currentUser.profile_pic != '' "
+        src="{{globalValue.profilePhotoUrl}}{{acServices.currentUser.profile_pic}}" />
+
+      <div style="height: 50%;">
+        <span [matMenuTriggerFor]="onlineStatusMenu" class="cursor">
+          <img name="MyImage" (mouseover)="onMouseOver(this)" (mouseout)="onMouseOut(this)" src="{{imgSrc}}"
+            class="statusIcon" />
+          <span style="font-size: 11px;top:-14px;position: relative;display: none;" (mouseover)="onMouseOver(this)"
+            (mouseout)="onMouseOut(this)">
+            {{currentStatusName}}
+          </span>
+        </span>
+        <span flex>
+          <mat-menu #onlineStatusMenu="matMenu" yPosition="below" [overlapTrigger]="false" class="cursor">
+            <div style="width: 200px;">
+              <button (click)="onlineStatusChange(onlineStatusXmpp.online)" mat-menu-item>
+                <img *ngIf="currentUser.statusName == onlineStatusDisplay.online" src="{{tickImageUrl}}"
+                  style="position: absolute;left: 7px; width: 15px;" />
+                <span style="position: relative; top:5px;right: -40px;">
+                  <img src="{{statusGreenImageUrl}}" style="position: absolute; top:1px;left:-20px;width: 13px;" />
+                  {{onlineStatusDisplay.online}}</span>
+              </button>
+              <button (click)="onlineStatusChange(onlineStatusXmpp.away)" mat-menu-item>
+                <img *ngIf="currentUser.statusName == onlineStatusDisplay.away" src="{{tickImageUrl}}"
+                  style="position: absolute;left: 7px;width: 15px;" />
+                <span style="position: relative; top:5px;right: -40px;">
+                  <img src="{{circleYellowImageUrl}}" style="position: absolute; top:1px;left:-20px;width: 13px;" />
+                  {{onlineStatusDisplay.away}}</span>
+              </button>
+              <button (click)="onlineStatusChange(onlineStatusXmpp.busy)" mat-menu-item>
+                <img *ngIf="currentUser.statusName == onlineStatusDisplay.busy" src="{{tickImageUrl}}"
+                  style="position: absolute;left: 7px; width: 15px;" />
+                <span style="position: relative; top:5px;right: -40px;">
+                  <img src="{{circleRedImageUrl}}" style="position: absolute; top:1px;left:-20px;width: 13px;" />
+                  {{onlineStatusDisplay.busy}}</span>
+              </button>
+              <button (click)="onlineStatusChange(onlineStatusXmpp.invisible)" mat-menu-item>
+                <img *ngIf="currentUser.statusName == onlineStatusDisplay.invisible" src="{{tickImageUrl}}"
+                  style="position: absolute;left: 7px; width: 15px;" />
+                <span style="position: relative; top:5px;right: -40px;">
+                  <img src="{{status_ashImageUrl}}" style="position: absolute; top:1px;left:-20px;width: 13px;" />
+                  {{onlineStatusDisplay.invisible}}</span>
+              </button>
+            </div>
+
+          </mat-menu>
+        </span>
+
+      </div>
+
+      <span class="userName">Welcome,
+        {{acServices.currentUser.first_name}}&nbsp;{{acServices.currentUser.last_name}}</span>
+      <span style="font-size: 13px;
+      border: 1px solid;
+      border-radius: 21px;
+      padding: 5px;
+      vertical-align: super;cursor: pointer;line-height: 4;"
+        class="userRoleName">{{isDoctorRole?'Doctor':'Patient'}}</span>
+    </div>
+  </div>
+
+  <div class="headerTopRight"
+    style="color: #F0F0F0;font-size: 16px;background-image: linear-gradient(to top, #F49D23, #F5CD1F);">
+    <div>
+      <div class="col-sm-2" style="margin-top: 5px;padding-left: 20px">
+        <span style="color: #F0F0F0;">
+          <i><img height="22" width="24" src="../../../assets/images/lg/new_res/header/home_icon.png"></i>
+          &nbsp;{{isDoctorRole?'Doctor Panel':'Patient Panel'}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+</mat-toolbar>
+
+<mat-toolbar class="headerTopLoginPage" layout="row" *ngIf="acServices.currentUser == null">
+  <span *ngIf="appName == 'Video Collaboration Hub'" class="appname_text cursor"
+    style="color:white; font-weight: inherit; font-size: 18px; " routerLink="/Landing"
+    title="{{appName}}">{{appName}}</span>
+  <span *ngIf="appName != 'Video Collaboration Hub'" style="font-size: 15px" class="appname_text landingHeader cursor"
+    routerLink="/Landing" title="{{appName}}">{{appName}}</span>
+</mat-toolbar>
